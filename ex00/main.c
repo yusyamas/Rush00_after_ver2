@@ -12,9 +12,11 @@
 /* ************************************************************************** */
 
 #include "rush00.c"
+#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
 	rush(5, 5);
+	printf("\n");
 	return (0);
 }

@@ -6,11 +6,10 @@
 /*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 05:27:56 by miida             #+#    #+#             */
-/*   Updated: 2022/10/07 20:57:50 by miida            ###   ########.fr       */
+/*   Updated: 2022/10/07 20:58:53 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
