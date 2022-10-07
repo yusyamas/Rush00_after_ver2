@@ -1,2 +1,12 @@
-norminette $1
-gcc -Wall -Wextra -Werror $1
+#!/usr/bin/env bash
+
+if (( $# > 1 ));then
+    norminette $@
+    gcc -Wall -Wextra -Werror "$@"
+else
+    #引数なしで分割コンパイル、./a.outを生成する
+    norminette  "$(find . -name *.c)"
+    gcc -c -Wall -Wextra -Werror "$(find . -name *.c)"
+    gcc -Wall -Wextra -Werror "$(find . -name *.o)"
+fi
+
