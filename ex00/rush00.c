@@ -10,22 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-#include <stdio.h>
-#include <unistd.h>
+#define T_L 'o'
+#define T_R 'o'
+#define B_L 'o'
+#define B_R 'o'
+#define HORIZ '-'
+#define VERT '|'
+#define SP ' '
+#define EOL '\n'
 
-void	ft_putchar(char c)
+void	ft_putchar(char c);
+
+void	put_sign(int xx, int yy, int x, int y)
 {
-	write(1, &c, 1);
-	return ;
+	if (xx == 0 && yy == 0)
+		ft_putchar(T_L);
+	else if (xx == x - 1 && yy == 0)
+		ft_putchar(T_R);
+	else if (xx == 0 && yy == y - 1)
+		ft_putchar(B_L);
+	else if (xx == x - 1 && yy == y - 1)
+		ft_putchar(B_R);
+	else if (xx == 0 || xx == x - 1)
+		ft_putchar(VERT);
+	else if (xx == x)
+		ft_putchar(EOL);
+	else if (yy == 0 || yy == y - 1)
+		ft_putchar(HORIZ);
+	else
+		ft_putchar(SP);
 }
-*/
 
 // x、yと呼ばれる、2つのint型の値を引数とする関数rushを作成せよ。
 //横の長さがx、高さがyの長方形を標準出力に出力すること。
-//o---o
+// o---o
 //|   |
-//o---o
+// o---o
 int	rush(int x, int y)
 {
 	int	xx;
@@ -37,49 +57,10 @@ int	rush(int x, int y)
 		xx = 0;
 		while (xx <= x)
 		{
-			if (xx == 0 && yy == 0)
-			{
-				ft_putchar('o');
-			}
-			else if (xx == x - 1 && yy == 0)
-			{
-				ft_putchar('o');
-			}
-			else if (xx == 0 && yy == y - 1)
-			{
-				ft_putchar('o');
-			}
-			else if (xx == x - 1 && yy == y - 1)
-			{
-				ft_putchar('o');
-			}
-			else if (xx == 0 || xx == x - 1)
-			{
-				ft_putchar('|');
-			}
-			else if (xx == x)
-			{
-				ft_putchar('\n');
-			}
-			else if (yy == 0 || yy == y - 1)
-			{
-				ft_putchar('-');
-			}
-			else
-			{
-				ft_putchar(' ');
-			}
+			put_sign(xx, yy, x, y);
 			xx += 1;
 		}
 		yy += 1;
 	}
 	return (0);
 }
-
-/*
-int	main(void)
-{
-	rush(5, 5);
-	return (0);
-}
-*/

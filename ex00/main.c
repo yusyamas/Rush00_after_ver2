@@ -11,10 +11,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush00.c"
+#include <stdlib.h>
+
+int	rush(int x, int y);
 
 int	main(int argc, char *argv[])
 {
-	rush(5, 5);
+	if (0 < argc)
+		rush(atoi(argv[1]), atoi(argv[2]));
+	rush(1, 5);
+	rush(5, 1);
 	return (0);
 }
