@@ -1,0 +1,2 @@
+norminette $1
+gcc -Wall -Wextra -Werror $1
