@@ -6,22 +6,26 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 20:59:04 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/08 22:01:54 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 #define FT_NULL '\0'
 
 int	c_rush_00_atoi(char *c, int *flag)
 {
 	int	num;
-	int	cnt;
 
 	num = 0;
-	cnt = 0;
 	while (*c != FT_NULL)
 	{
+		if (*c < 48 || *c > 57)
+		{
+			*flag = 0;
+			break ;
+		}
 		num *= 10;
 		num += *c - 48;
 		c += 1;
@@ -52,6 +56,6 @@ int	main(int argc, char *argv[])
 		x = 1;
 		y = 1;
 	}
-	rush(x, y);
+	printf("%d %d %d\n", x, y, flag);
 	return (0);
 }
