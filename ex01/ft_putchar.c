@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: RUSHS00(yusyamas,mogawa,miida)              +#+  +:+      
-	+#+        */
+/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 20:39:59 by miida             #+#    #+#             */
-/*   Updated: 2022/10/07 20:40:40 by miida            ###   ########.fr       */
+/*   Created: 2022/10/07 05:27:56 by miida             #+#    #+#             */
+/*   Updated: 2022/10/07 23:11:20 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
-int	rush(int x, int y);
-
-int	main(int argc, char *argv[])
+void	ft_putchar(char c)
 {
-	if (0 < argc)
-		rush(atoi(argv[1]), atoi(argv[2]));
-	rush(1, 5);
-	rush(5, 1);
-	return (0);
+	write(1, &c, 1);
+	return ;
 }

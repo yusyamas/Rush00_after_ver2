@@ -1,25 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: RUSHS00(yusyamas,mogawa,miida)              +#+  +:+      
-	+#+        */
+/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 20:39:59 by miida             #+#    #+#             */
-/*   Updated: 2022/10/07 20:40:40 by miida            ###   ########.fr       */
+/*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
+/*   Updated: 2022/10/08 23:35:57 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#define FT_NULL '\0'
 
 int	rush(int x, int y);
 
+int	c_rush_00_atoi(char *c, int *flag)
+{
+	int	num;
+
+	num = 0;
+	while (*c != FT_NULL)
+	{
+		if (*c < '0' || *c > '9')
+		{
+			*flag = 0;
+			break ;
+		}
+		num *= 10;
+		num += *c - '0';
+		c += 1;
+	}
+	if (num < 0)
+	{
+		*flag = 0;
+	}
+	return (num);
+}
+
 int	main(int argc, char *argv[])
 {
-	if (0 < argc)
-		rush(atoi(argv[1]), atoi(argv[2]));
-	rush(1, 5);
-	rush(5, 1);
+	int	x;
+	int	y;
+	int	flag;
+
+	flag = 1;
+	x = 1;
+	y = 1;
+	if (argc >= 3)
+	{
+		x = c_rush_00_atoi(argv[1], &flag);
+		y = c_rush_00_atoi(argv[2], &flag);
+	}
+	if (flag == 0)
+	{
+		x = 1;
+		y = 1;
+	}
+	rush(x, y);
 	return (0);
 }
