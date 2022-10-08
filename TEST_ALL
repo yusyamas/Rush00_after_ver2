@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+cd $(git rev-parse --show-toplevel)
+for f in $(find . -type d -name "ex*")
+do
+	echo "*****************TEST $f******************"
+	cd $f && ../CC
+	cd $(git rev-parse --show-toplevel)
+done
+
