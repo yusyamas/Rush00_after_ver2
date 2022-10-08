@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
+/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:26:38 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 14:28:03 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/09 01:17:10 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define T_L 'A'
-#define T_R 'C'
-#define B_L 'A'
-#define B_R 'C'
-#define HORIZ 'B'
-#define VERT 'B'
+#define T_L 'o'
+#define T_R 'o'
+#define B_L 'o'
+#define B_R 'o'
+#define HORIZ '-'
+#define VERT '|'
 #define SP ' '
 #define EOL '\n'
 
