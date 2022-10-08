@@ -6,11 +6,10 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 22:01:54 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/08 22:23:13 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 #define FT_NULL '\0'
 
@@ -56,6 +55,6 @@ int	main(int argc, char *argv[])
 		x = 1;
 		y = 1;
 	}
-	printf("%d %d %d\n", x, y, flag);
+	rush(x, y);
 	return (0);
 }
