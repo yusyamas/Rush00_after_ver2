@@ -6,16 +6,25 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:26:38 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 14:28:03 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:24:45 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+<<<<<<< HEAD:ex00/rush00.c
+#define T_L 'o'
+#define T_R 'o'
+#define B_L 'o'
+#define B_R 'o'
+#define HORIZ '-'
+#define VERT '|'
+=======
 #define T_L 'A'
 #define T_R 'C'
-#define B_L 'A'
-#define B_R 'C'
+#define B_L 'C'
+#define B_R 'A'
 #define HORIZ 'B'
 #define VERT 'B'
+>>>>>>> ex04_yusyamas:ex04/rush04.c
 #define SP ' '
 #define EOL '\n'
 
