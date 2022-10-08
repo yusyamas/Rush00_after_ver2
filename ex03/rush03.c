@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush00_2.c                                         :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:26:38 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 13:30:49 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/08 14:28:03 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define T_L 'A'
 #define T_R 'C'
-#define B_L 'C'
-#define B_R 'A'
+#define B_L 'A'
+#define B_R 'C'
 #define HORIZ 'B'
 #define VERT 'B'
 #define SP ' '
 #define EOL '\n'
+
+void	ft_putchar(char c);
 
 void	put_sign(int xx, int yy, int x, int y)
 {
