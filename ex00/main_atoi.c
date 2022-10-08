@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main_atoi.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
+/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/08 22:23:13 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/08 23:35:57 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #define FT_NULL '\0'
+
+int	rush(int x, int y);
 
 int	c_rush_00_atoi(char *c, int *flag)
 {
@@ -20,13 +21,13 @@ int	c_rush_00_atoi(char *c, int *flag)
 	num = 0;
 	while (*c != FT_NULL)
 	{
-		if (*c < 48 || *c > 57)
+		if (*c < '0' || *c > '9')
 		{
 			*flag = 0;
 			break ;
 		}
 		num *= 10;
-		num += *c - 48;
+		num += *c - '0';
 		c += 1;
 	}
 	if (num < 0)
