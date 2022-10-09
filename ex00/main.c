@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/09 20:45:01 by miida            ###   ########.fr       */
+/*   Updated: 2022/10/09 22:20:55 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putchar(char c);
 
 int		rush(int x, int y);
 
-int	overflow_ast(int num)
+int	x10_overflow_check(int num)
 {
 	if (num <= INT_MAX / 10)
 	{
@@ -27,7 +27,7 @@ int	overflow_ast(int num)
 	return (1);
 }
 
-int	overflow_plus(int num, int x)
+int	plus_overflow_check(int num, int x)
 {
 	if (num <= INT_MAX - x)
 	{
@@ -36,50 +36,55 @@ int	overflow_plus(int num, int x)
 	return (1);
 }
 
-int	c_rush_00_atoi(char *c, int *flag)
+int	c_rush_00_atoi(char *c, int *is_error)
 {
-	int	num;
-	int	nbr;
+	int	sum;
+	int	digit_number;
 
-	num = 0;
+	sum = 0;
 	while (*c != FT_NULL)
 	{
 		if (*c < '0' || *c > '9')
 		{
-			*flag = 0;
+			*is_error = 0;
 			break ;
 		}
-		if (overflow_ast(num))
+		if (x10_overflow_check(sum))
 		{
-			*flag = 0;
+			*is_error = 0;
 		}
-		num *= 10;
-		nbr = *c - '0';
-		if (overflow_plus(num, nbr))
+		sum *= 10;
+		digit_number = *c - '0';
+		if (plus_overflow_check(sum, digit_number))
 		{
-			*flag = 0;
+			*is_error = 0;
 		}
-		num += nbr;
+		sum += digit_number;
 		c += 1;
 	}
-	return (num);
+	return (sum);
 }
 
 int	main(int argc, char *argv[])
 {
 	int	x;
 	int	y;
-	int	flag;
+	int	is_error;
 
-	flag = 1;
+	is_error = 1;
 	if (argc >= 3)
 	{
-		x = c_rush_00_atoi(argv[1], &flag);
-		y = c_rush_00_atoi(argv[2], &flag);
+		x = c_rush_00_atoi(argv[1], &is_error);
+		y = c_rush_00_atoi(argv[2], &is_error);
 	}
-	if (flag == 0)
+	if (is_error == 0)
 	{
 		write(2, "Error\n", 6);
+		return (1);
+	}
+	if (x == 0 || y == 0)
+	{
+		write(2, "Warning XorY=0\n", 15);
 		return (1);
 	}
 	rush(x, y);
