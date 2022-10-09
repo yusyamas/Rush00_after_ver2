@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rush01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mogawa <mogawa@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 14:29:23 by mogawa            #+#    #+#             */
-/*   Updated: 2022/10/08 15:21:38 by mogawa           ###   ########.fr       */
+/*   Updated: 2022/10/09 22:51:12 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #define T_L '/'
 #define T_R '\\'
 #define B_L '\\'
@@ -46,6 +47,11 @@ int	rush(int x, int y)
 	int	xx;
 	int	yy;
 
+	if (x < 0 || y < 0)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	yy = 0;
 	while (yy <= y - 1)
 	{

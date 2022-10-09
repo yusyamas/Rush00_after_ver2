@@ -6,7 +6,7 @@
 /*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/09 22:20:55 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/09 22:48:01 by yusyamas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,5 @@ int	main(int argc, char *argv[])
 		write(2, "Warning XorY=0\n", 15);
 		return (1);
 	}
-	rush(x, y);
-	return (0);
+	return (rush(x, y));
 }
