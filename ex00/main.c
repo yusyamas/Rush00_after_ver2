@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
+/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:25:20 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/09 22:48:01 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/09 23:03:47 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,6 @@ int	main(int argc, char *argv[])
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	if (x == 0 || y == 0)
-	{
-		write(2, "Warning XorY=0\n", 15);
-		return (1);
-	}
+
 	return (rush(x, y));
 }

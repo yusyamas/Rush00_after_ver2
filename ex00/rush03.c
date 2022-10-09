@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rush03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusyamas <yuppiy2000@icloud.com>           +#+  +:+       +#+        */
+/*   By: miida <miida@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 13:26:38 by yusyamas          #+#    #+#             */
-/*   Updated: 2022/10/09 22:51:23 by yusyamas         ###   ########.fr       */
+/*   Updated: 2022/10/09 23:04:53 by miida            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int	rush(int x, int y)
 	if (x < 0 || y < 0)
 	{
 		write(2, "Error\n", 6);
+		return (1);
+	}
+	if (x == 0 || y == 0)
+	{
+		write(2, "Warning XorY=0\n", 15);
 		return (1);
 	}
 	yy = 0;
