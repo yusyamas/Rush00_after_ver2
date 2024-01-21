@@ -82,6 +82,5 @@ int	main(int argc, char *argv[])
 		write(2, "Error\n", 6);
 		return (1);
 	}
-
 	return (rush(x, y));
 }
